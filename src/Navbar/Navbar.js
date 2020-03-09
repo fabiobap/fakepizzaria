@@ -20,7 +20,7 @@ text-shadow: 5px 3px 2px #380502;
 export function Navbar() {
     return <NavbarStyled>
         <Logo>
-        Fake Pizzaria 🍕
+            Fake Pizzaria <span role='img' aria-label="slicepizza">🍕</span>
         </Logo>
     </NavbarStyled>
 }

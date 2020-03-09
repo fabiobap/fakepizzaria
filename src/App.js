@@ -1,18 +1,9 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components'
 import { Navbar } from './Navbar/Navbar';
 import { Banner } from './Banner/Banner';
 import { Menu } from './Menu/Menu';
+import { GlobalStyle } from './Styles/GlobalStyle';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin:0;
-    font-family: 'Open Sans', sans-serif;
-  }
-    h1,h2,h3 {
-    font-family: 'Righteous', cursive;
-    }
-`
 function App() {
   return (
     <>
@@ -20,7 +11,6 @@ function App() {
       <Navbar />
       <Banner />
       <Menu />
-      <div>Hello world :)</div>
     </>
   );
 }
