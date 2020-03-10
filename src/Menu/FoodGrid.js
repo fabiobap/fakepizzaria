@@ -13,7 +13,7 @@ padding:5px;
 `;
 
 export const Food = styled.div`
-height:100px;
+height:150px;
 padding: 10px;
 font-size: 20px;
 background-image: ${({ img }) => `url(${img})`};
