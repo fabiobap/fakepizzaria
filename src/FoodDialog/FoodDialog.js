@@ -61,11 +61,22 @@ font-size: 30px;
 padding: 5px 40px;
 `;
 
-export function FoodDialog({ openFood, setOpenFood }) {
+export function FoodDialog({ openFood, setOpenFood, setOrders, orders}) {
     function close() {
         setOpenFood();
     }
-    return openFood ? (
+    if (!openFood) return null;
+
+    const order = {
+        name:openFood.name
+    }
+
+    function addToOrder(){
+        setOrders([...orders, order]);
+        close();
+    }
+    
+    return(
         <>
             <DialogShadow onClick={close} />
             <Dialog>
@@ -75,11 +86,9 @@ export function FoodDialog({ openFood, setOpenFood }) {
                 <DialogContent>
                 </DialogContent>
                 <DialogFooter>
-                <ConfirmButton>
-                    Add to Order
-                </ConfirmButton>
+                <ConfirmButton onClick={addToOrder}>Add to Order</ConfirmButton>
                 </DialogFooter>
             </Dialog>
         </>
-    ) : null;
+    );
 }
